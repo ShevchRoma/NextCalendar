@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 const Header = () => {
     const events = useSelector(state => state.events)
     
-     const json = JSON.stringify(events.events)
+    const json = JSON.stringify(events.events)
     
     const exportData = (data, fileName, type) => {
 
