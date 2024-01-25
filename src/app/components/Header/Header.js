@@ -7,8 +7,9 @@ import { useSelector } from 'react-redux'
 
 const Header = () => {
     const events = useSelector(state => state.events)
-    console.log(events)
-
+    
+     const json = JSON.stringify(events.events)
+    
     const exportData = (data, fileName, type) => {
 
         const blob = new Blob([data], { type });
@@ -20,7 +21,7 @@ const Header = () => {
         window.URL.revokeObjectURL(url)
     }
     const onExportData = () => {
-        exportData(events.events, "data.json", 'application/json')
+        exportData(json, "data.json", 'application/json')
     }
 
     return (
